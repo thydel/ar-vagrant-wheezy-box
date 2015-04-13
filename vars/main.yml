@@ -1,2 +1,3 @@
 ---
-# vars file for /home/thy/usr/thydel/ar-vagrant-wheezy-box
+
+vagrantwheezybox_box: debian-wheezy-64.box

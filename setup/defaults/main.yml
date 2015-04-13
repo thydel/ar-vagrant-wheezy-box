@@ -1,0 +1,7 @@
+---
+
+self_name: vagrant-wheezy-box
+self_description: use git@github.com:dotzero/vagrant-debian-wheezy-64.git
+self_templates:
+  - ./README.md
+  - meta/main.yml

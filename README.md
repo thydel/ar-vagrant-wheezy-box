@@ -1,38 +1,33 @@
-Role Name
-=========
+<!--- -*- Mode: Markdown; fill-column: 96; -*- --->
+<!--- Ansible managed: /home/thy/usr/epi/ar-vagrant-wheezy-box/setup/templates/README.md.j2 modified on 2015-04-13 21:05:50 by thy on make.epiconcept.local --->
 
-A brief description of the role goes here.
+# Role Name
 
-Requirements
-------------
+use git@github.com:dotzero/vagrant-debian-wheezy-64.git
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+## Role Variables
 
-Role Variables
---------------
+```yaml
+vagrantwheezybox_name: debian-wheezy
+vagrantwheezybox_git: git@github.com:thydel/vagrant-debian-wheezy-64.git
+vagrantwheezybox_dir: ../vagrant-debian-wheezy-64
+```
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+## Example Playbook
 
-Dependencies
-------------
+```yaml
+- hosts: servers
+  roles:
+    - role: thydel.vagrant-wheezy-box
+```
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+## Usage
 
-Example Playbook
-----------------
+- ansible-playbook -i localhost, vagrant-wheezy-box-setup.yml --diff
+- ansible-playbook -i localhost, -c local vagrant-wheezy-box-play.yml --check
+- ansible-playbook -i server, vagrant-wheezy-box-play.yml --check
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+## License
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+MIT
 
-License
--------
-
-BSD
-
-Author Information
-------------------
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).

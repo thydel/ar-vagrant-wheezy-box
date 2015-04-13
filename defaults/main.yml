@@ -1,2 +1,5 @@
 ---
-# defaults file for /home/thy/usr/thydel/ar-vagrant-wheezy-box
+
+vagrantwheezybox_name: debian-wheezy
+vagrantwheezybox_git: git@github.com:thydel/vagrant-debian-wheezy-64.git
+vagrantwheezybox_dir: ../vagrant-debian-wheezy-64

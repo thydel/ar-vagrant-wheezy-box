@@ -1,2 +1,19 @@
 ---
-# tasks file for /home/thy/usr/thydel/ar-vagrant-wheezy-box
+
+- file:
+    path: "{{ vagrantwheezybox_dir }}"
+    state: directory
+
+- git:
+    repo: "{{ vagrantwheezybox_git }}"
+    dest: "{{ vagrantwheezybox_dir }}"
+
+- command: ./build.sh
+  args:
+    chdir: "{{ vagrantwheezybox_dir }}"
+    creates: "{{ vagrantwheezybox_dir }}/{{ vagrantwheezybox_box }}"
+
+- command: vagrant box add {{ vagrantwheezybox_name }} {{ vagrantwheezybox_box }}
+  args:
+    chdir: "{{ vagrantwheezybox_dir }}"
+    creates: ~/.vagrant.d/boxes/{{ vagrantwheezybox_name }}

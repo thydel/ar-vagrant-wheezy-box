@@ -1,0 +1,33 @@
+<!--- -*- Mode: Markdown; fill-column: 96; -*- --->
+<!--- {{ ansible_managed }} --->
+
+# Role Name
+
+{{ self_description }}
+
+## Role Variables
+
+```yaml
+vagrantwheezybox_name: debian-wheezy
+vagrantwheezybox_git: git@github.com:thydel/vagrant-debian-wheezy-64.git
+vagrantwheezybox_dir: ../vagrant-debian-wheezy-64
+```
+
+## Example Playbook
+
+```yaml
+- hosts: servers
+  roles:
+    - role: thydel.{{ self_name }}
+```
+
+## Usage
+
+- ansible-playbook -i localhost, {{ self_name }}-setup.yml --diff
+- ansible-playbook -i localhost, -c local {{ self_name }}-play.yml --check
+- ansible-playbook -i server, {{ self_name }}-play.yml --check
+
+## License
+
+MIT
+

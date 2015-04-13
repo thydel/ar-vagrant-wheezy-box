@@ -1,0 +1,1 @@
+self := vagrant-wheezy-box
